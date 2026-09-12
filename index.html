@@ -467,8 +467,8 @@ footer{background:var(--navy-deep);color:var(--on-navy-dim);padding:40px max(28p
   8. CHANNEL_ID in the YouTube script -> RFL channel ID
   9. og:url -> live domain once deployed
 
-  Only Standings, History and Rulebook currently point to live pages.
-  Salary, Capsheet, Team Database and Bracket still show the "isn't live yet"
+  Standings, History, Rulebook, and Bracket now point to live pages.
+  Salary, Capsheet, and Team Database still show the "isn't live yet"
   toast via comingSoon() until their tools ship.
 -->
 
@@ -497,9 +497,9 @@ footer{background:var(--navy-deep);color:var(--on-navy-dim);padding:40px max(28p
     <div class="tk-dot warn"></div>
     <div><div class="tk-label">RULEBOOK</div><div class="tk-meta">Official</div></div>
   </button>
-  <button class="tk-item" onclick="comingSoon('Bracket')">
-    <div class="tk-dot soon"></div>
-    <div><div class="tk-label">BRACKET</div><div class="tk-meta">Coming Soon</div></div>
+  <button class="tk-item" onclick="navigate('bracket')">
+    <div class="tk-dot live"></div>
+    <div><div class="tk-label">BRACKET</div><div class="tk-meta">Live</div></div>
   </button>
   <button class="tk-item" onclick="window.open('https://www.youtube.com/@SportingGear/featured','_blank')">
     <div class="tk-dot soon"></div>
@@ -534,7 +534,7 @@ footer{background:var(--navy-deep);color:var(--on-navy-dim);padding:40px max(28p
         <div class="nav-panel">
           <button onclick="navigate('standings')">Standings</button>
           <button onclick="navigate('history')">Match History</button>
-          <button onclick="comingSoon('Bracket')">Bracket</button>
+          <button onclick="navigate('bracket')">Bracket</button>
         </div>
       </div>
       <div class="nav-dd">
@@ -579,7 +579,7 @@ footer{background:var(--navy-deep);color:var(--on-navy-dim);padding:40px max(28p
   <button onclick="comingSoon('Team Database');closeMenu()"  data-page="database">Database</button>
   <button onclick="navigate('standings');closeMenu()" data-page="standings">Standings</button>
   <button onclick="navigate('history');closeMenu()"   data-page="history">History</button>
-  <button onclick="comingSoon('Bracket');closeMenu()"   data-page="bracket">Bracket</button>
+  <button onclick="navigate('bracket');closeMenu()"   data-page="bracket">Bracket</button>
   <button onclick="navigate('rules');closeMenu()"   data-page="rules">Rulebook</button>
   <button onclick="window.open('https://rpl-applications.vercel.app','_blank');closeMenu()" data-page="applications">Applications</button>
   <div class="m-divider"></div>
@@ -688,9 +688,9 @@ footer{background:var(--navy-deep);color:var(--on-navy-dim);padding:40px max(28p
         <img src="Images/RFLImage4.webp" alt="">
         <div class="hub-card-overlay"><div class="hub-card-tag">Reference</div><div class="hub-card-name">Rulebook</div></div>
       </div>
-      <div class="hub-card" onclick="comingSoon('Bracket')">
+      <div class="hub-card" onclick="navigate('bracket')">
         <img src="Images/RFLImage5.webp" alt="">
-        <div class="hub-card-badge">Soon</div>
+        <div class="hub-card-badge">Live</div>
         <div class="hub-card-overlay"><div class="hub-card-tag">Postseason</div><div class="hub-card-name">Bracket</div></div>
       </div>
       <div class="hub-card" onclick="comingSoon('Salary')">
@@ -776,7 +776,7 @@ footer{background:var(--navy-deep);color:var(--on-navy-dim);padding:40px max(28p
         <h4>Competition</h4>
         <button onclick="navigate('standings')">Standings</button>
         <button onclick="navigate('history')">Match History</button>
-        <button onclick="comingSoon('Bracket')">Bracket</button>
+        <button onclick="navigate('bracket')">Bracket</button>
       </div>
       <div class="footer-col">
         <h4>Front Office</h4>
@@ -832,7 +832,7 @@ footer{background:var(--navy-deep);color:var(--on-navy-dim);padding:40px max(28p
 
 <div id="page-bracket" class="page iframe-page hidden">
   <div class="iframe-loading" id="loading-bracket"><div class="spinner"></div><p>Loading Bracket…</p></div>
-  <iframe src="" onload="document.getElementById('loading-bracket').classList.add('done')" title="Bracket"></iframe>
+  <iframe src="https://rflbracket.vercel.app/" onload="document.getElementById('loading-bracket').classList.add('done')" title="Bracket"></iframe>
 </div>
 
 <div id="toasts"></div>
