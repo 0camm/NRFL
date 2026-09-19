@@ -174,11 +174,6 @@ h1,h2,h3,.display{font-family:'Big Shoulders Display',Impact,sans-serif;text-tra
 .nav-right{display:flex;align-items:center;gap:18px;flex-shrink:0}
 .nav-textlink{font-size:13px;font-weight:600;color:var(--ink-3);white-space:nowrap;transition:color .15s}
 .nav-textlink:hover{color:var(--ink)}
-.nav-signin{
-  font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;white-space:nowrap;
-  background:var(--glass);border:1px solid var(--edge);border-radius:999px;padding:9px 18px;transition:background .15s,border-color .15s;
-}
-.nav-signin:hover{background:rgba(255,255,255,.12);border-color:var(--edge-hi)}
 .nav-hamburger{display:none}
 @media(max-width:1120px){
   .nav-menu,.nav-kickoff,.nav-right .nav-textlink{display:none}
@@ -524,7 +519,6 @@ footer{margin-top:96px;padding:0 0 max(28px,var(--safe-bottom))}
     <a class="nav-textlink" href="https://discord.gg/Fg8gPsruNw" target="_blank" rel="noopener">Discord ↗</a>
     <a class="nav-textlink" href="https://www.roblox.com/groups" target="_blank" rel="noopener">Roblox Group ↗</a>
     <a class="nav-textlink" href="https://www.youtube.com/@SportingGear/featured" target="_blank" rel="noopener">YouTube ↗</a>
-    <button class="nav-signin" onclick="toggleAdmin()">Admin</button>
     <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -850,10 +844,6 @@ function comingSoon(label){
     setTimeout(()=>t.remove(),220);
   },2600);
   closeMenu();
-}
-
-function toggleAdmin(){
-  comingSoon('Admin sign-in');
 }
 
 function scrollHub(dir){
